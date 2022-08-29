@@ -17,9 +17,9 @@ cd "$(date +"%d-%m")"
 
 mkdir MinBias50kHzHijingOutput
 
-git clone https://github.com/sPHENIX-Collaboration/analysis.git MinBias50kHzHijing
+git clone https://github.com/sPHENIX-Collaboration/DataMonitoring.git MinBias50kHzHijing
 
-cd MinBias50kHzHijing/Tracking/BenchmarkingTools/DailyCronJobScripts/MinBias50kHzHijing
+cd MinBias50kHzHijing/Tracking/DailyCronJobScripts/MinBias50kHzHijing
 
 mkdir logfiles
 
