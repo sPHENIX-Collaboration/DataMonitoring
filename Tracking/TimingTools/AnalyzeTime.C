@@ -120,26 +120,33 @@ void collectData(std::map<std::string,std::vector<double>>& modules,
 
 void initializeModules(std::map<std::string,std::vector<double>>& modules)
 {
-  std::vector<double> mvtx, intt, tpc, tpclean, silseed, caseed, preprop, kfprop, circlefit, clusterMover, tpcresiduals, secondtrkfit, trackmatch, trackfit, vtxfinder, vertexprop, actsseed, mm, mmmatch, dzcor;
+  std::vector<double> mvtx, intt, tpc, tpclean, silseed, caseed, preprop, kfprop, circlefit, clusterMover, tpcresiduals, secondtrkfit, trackmatch, trackfit, vtxfinder, vertexprop, actsseed, mm, mmmatch, dzcor, hitpruner, merger, cleaner, projector, geometry;
+  
+  // clustering
+  modules.insert(std::make_pair("MakeActsGeometry",geometry));
   modules.insert(std::make_pair("MvtxClusterizer",mvtx));
   modules.insert(std::make_pair("InttClusterizer",intt));
   modules.insert(std::make_pair("TpcClusterizer",tpc));
   modules.insert(std::make_pair("MicromegasClusterizer",mm));
-  modules.insert(std::make_pair("PHMicromegasTpcTrackMatching",mmmatch));
+  modules.insert(std::make_pair("MvtxHitPruner", hitpruner));  
   modules.insert(std::make_pair("TpcClusterCleaner",tpclean));
+
+  /// Seeding
+  modules.insert(std::make_pair("PHMicromegasTpcTrackMatching",mmmatch));
+  modules.insert(std::make_pair("PHSiliconSeedMerger", merger));
   modules.insert(std::make_pair("PHActsSiliconSeeding",silseed));
-  modules.insert(std::make_pair("Acts seed time",actsseed));
   modules.insert(std::make_pair("PHCASeeding",caseed));
-  modules.insert(std::make_pair("PrePropagatorPHTpcTrackSeedCircleFit",preprop));
   modules.insert(std::make_pair("PHSimpleKFProp",kfprop));
-  modules.insert(std::make_pair("PHTpcTrackSeedCircleFit",circlefit));
   modules.insert(std::make_pair("PHSiliconTpcTrackMatching",trackmatch));
-  modules.insert(std::make_pair("PHActsFirstTrkFitter",trackfit));
+  modules.insert(std::make_pair("PHTpcResiduals",tpcresiduals));
+
+  /// Final fitting
+  modules.insert(std::make_pair("PHActsTrkFitter",trackfit));
+  modules.insert(std::make_pair("PHTrackCleaner", cleaner));
   modules.insert(std::make_pair("PHSimpleVertexFinder",vtxfinder));
   modules.insert(std::make_pair("PHActsVertexPropagator",vertexprop));
   modules.insert(std::make_pair("PHTpcClusterMover",clusterMover));
-  modules.insert(std::make_pair("PHTpcResiduals",tpcresiduals));
-  modules.insert(std::make_pair("PHActsSecondTrkFitter",secondtrkfit));
   modules.insert(std::make_pair("PHTpcDeltaZCorrection",dzcor));
+  modules.insert(std::make_pair("PHActsTrackProjection",projector));
 }
 

@@ -18,6 +18,12 @@ foreach infile ($2/*)
     # Checks for a file with .out structure
     if ("`echo ${infile} | cut -d'.' -f2`" == "out" ) then
      echo $infile
+     
+     grep -o 'PHTrackCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o 'PHSiliconSeedMerger_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o 'PHActsTrackProjection_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o 'MvtxHitPruner_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o 'MakeActsGeometry_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'MvtxClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'InttClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'TpcClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
@@ -25,11 +31,8 @@ foreach infile ($2/*)
      grep -o 'PHMicromegasTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'TpcClusterCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'PHActsSiliconSeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHActsSiliconSeeding Acts seed time[^"]*' $infile >> time.txt
      grep -o 'PHCASeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PrePropagatorPHTpcTrackSeedCircleFit_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'PHSimpleKFProp_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHTpcTrackSeedCircleFit_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'PHSiliconTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'PHActsTrkFitter_TOP: per event time (ms):[^"]*' $infile >> time.txt
      grep -o 'PHSimpleVertexFinder_TOP: per event time (ms):[^"]*' $infile >> time.txt
