@@ -39,3 +39,8 @@ root  -l -b -q ~/git/analysis/Tracking/BenchmarkingTools/PhysicsPerformanceTools
 hadd MinBias50kHzHijingQA.root timingoutfile.root *Comparisons.root
 mv MinBias50kHzHijingQA.root ../
 mv MinBias50kHzHijingDailyBuild_g4svtx.root ../
+
+cd ../
+
+cp MinBias50kHzHijingQA.root /sphenix/WWW/subsystem/DataMonitoring/Tracking/50kHzMinBiasToday.root
+cp $YESTERDAY_DIR/../MinBias50kHzHijingQA.root /sphenix/WWW/subsystem/DataMonitoring/Tracking/50kHzMinBiasYesterday.root
