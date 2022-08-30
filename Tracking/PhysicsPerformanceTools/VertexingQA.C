@@ -1283,7 +1283,8 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
 
 //  SaveCanvas(c1, TString(qa_file_name_new) + TString("_") + TString(c1->GetName()), true);
     c1->Draw();
-
+    outfilef->cd();
+    c1->Write();
   // Y-direction
 
   TH2 *h_new2 = (TH2 *) qa_file_new->GetObjectChecked(
@@ -1377,8 +1378,10 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
   h_new2->Draw("colz");
 
   //SaveCanvas(c2, TString(qa_file_name_new) + TString("_") + TString(c2->GetName()), true);
-    c2->Draw();
     
+  c2->Draw();
+  outfilef->cd();
+  c2->Write();
   // Z-direction
 
   TH2 *h_new3 = (TH2 *) qa_file_new->GetObjectChecked(
