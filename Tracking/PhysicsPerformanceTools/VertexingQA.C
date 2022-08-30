@@ -88,8 +88,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
     {
       h_proj_new->GetXaxis()->SetRangeUser(-.01,.01);
     }
-    h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new->SetTitle("");
     h_proj_new->GetXaxis()->SetTitle(TString::Format(
         "DCA (r #phi) [cm]"));
     h_proj_new->GetXaxis()->SetNdivisions(5,5);
@@ -213,8 +212,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
     {
       h_proj_new2->GetXaxis()->SetRangeUser(-.01,.01);
     }
-    h_proj_new2->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new2->SetTitle("");
     h_proj_new2->GetXaxis()->SetTitle(TString::Format(
         "DCA (r #phi) [cm]"));
     h_proj_new2->GetXaxis()->SetNdivisions(5,5);
@@ -357,8 +355,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
     {
       h_proj_new->GetXaxis()->SetRangeUser(-.01, .01);
     }
-    h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new->SetTitle("");
     h_proj_new->GetXaxis()->SetTitle(TString::Format(
         "DCA (Z) [cm]"));
     h_proj_new->GetXaxis()->SetNdivisions(5, 5);
@@ -482,8 +479,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
     {
       h_proj_new2->GetXaxis()->SetRangeUser(-.01, .01);
     }
-    h_proj_new2->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                          ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new2->SetTitle("");
     h_proj_new2->GetXaxis()->SetTitle(TString::Format(
         "DCA (Z) [cm]"));
     h_proj_new2->GetXaxis()->SetNdivisions(5, 5);
@@ -599,7 +595,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       ge_QAG4SimulationTracking_DCArPhi->Draw("pe");
     }
 
-    ge_QAG4SimulationTracking_DCArPhi->SetTitle("DCA (r #phi, #geq 2MVTX, #geq 1INTT, #geq 20TPC) [cm]");
+    ge_QAG4SimulationTracking_DCArPhi->SetTitle("");
     DrawReference(ge_QAG4SimulationTracking_DCArPhi, h_ratio_ref, true);
   }
 
@@ -625,7 +621,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
 
     TGraphErrors *ge_QAG4SimulationTracking_DCAZ = FitProfile(h_QAG4SimulationTracking_DCAZ);
     ge_QAG4SimulationTracking_DCAZ->Draw("pe");
-    ge_QAG4SimulationTracking_DCAZ->SetTitle("DCA (Z) [cm]");
+    ge_QAG4SimulationTracking_DCAZ->SetTitle("");
 
     TGraphErrors *h_ratio_ref = NULL;
     if (qa_file_ref)
@@ -736,8 +732,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
         bin_start, bin_end);
     h_proj_new->GetXaxis()->SetRangeUser(-5.,5.);
     h_proj_new->Rebin(5);
-    h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new->SetTitle("");
     h_proj_new->GetXaxis()->SetTitle(TString::Format(
         "Sigmalized DCA (r #phi)"));
     h_proj_new->GetXaxis()->SetNdivisions(5,5);
@@ -867,8 +862,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
         bin_start, bin_end);
     h_proj_new2->GetXaxis()->SetRangeUser(-5.,5.);
     h_proj_new2->Rebin(5);
-    h_proj_new2->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
+    h_proj_new2->SetTitle("");
     h_proj_new2->GetXaxis()->SetTitle(TString::Format(
         "Sigmalized DCA (Z)"));
     h_proj_new2->GetXaxis()->SetNdivisions(5,5);
@@ -983,7 +977,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       ge_QAG4SimulationTracking_DCArPhi->Draw("pe");
     }
 
-    ge_QAG4SimulationTracking_DCArPhi->SetTitle("DCA_{r#phi}/#sigma[DCA_{r#phi}]");
+    ge_QAG4SimulationTracking_DCArPhi->SetTitle("");
     DrawReference(ge_QAG4SimulationTracking_DCArPhi, h_ratio_ref, true);
   }
 
@@ -1010,7 +1004,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
 
     TGraphErrors *ge_QAG4SimulationTracking_DCAZ = FitProfile(h_QAG4SimulationTracking_DCAZ);
     ge_QAG4SimulationTracking_DCAZ->Draw("pe");
-    ge_QAG4SimulationTracking_DCAZ->SetTitle("DCA_z/#sigma[DCA_z]");
+    ge_QAG4SimulationTracking_DCAZ->SetTitle("");
 
     TGraphErrors *h_ratio_ref = NULL;
     if (qa_file_ref)
@@ -1077,7 +1071,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ref->Rebin(nrebin);
     }
 
-    h_pass->SetTitle(TString(hist_name_prefix) + ": gntracks");
+    h_pass->SetTitle("");
 
     DrawReference(h_pass, h_ref, false);
   }
@@ -1109,7 +1103,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ref->Rebin(nrebin);
     }
 
-    h_pass->SetTitle(TString(hist_name_prefix) + ": gntracksmaps");
+    h_pass->SetTitle("");
 
     DrawReference(h_pass, h_ref, false);
   }
@@ -1141,7 +1135,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ref->Rebin(nrebin);
     }
 
-    h_pass->SetTitle(TString(hist_name_prefix) + ": ntracks");
+    h_pass->SetTitle("");
 
     DrawReference(h_pass, h_ref, false);
   }
@@ -1173,7 +1167,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ref->Rebin(nrebin);
     }
 
-    h_pass->SetTitle(TString(hist_name_prefix) + ": ntracks (#geq 2 MVTX)");
+    h_pass->SetTitle("");
 
     DrawReference(h_pass, h_ref, false);
   }
@@ -1248,8 +1242,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
             h_new->GetName(), bin_start, bin_end));
 	// bin_start, bin_end);
 
-    h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f cm - gvz", gvz_range.first, gvz_range.second));
+    h_proj_new->SetTitle("");
     h_proj_new->GetXaxis()->SetTitle(TString::Format(
         "Vertex Resolution (x) [cm]"));
     h_proj_new->GetXaxis()->SetNdivisions(5,5);
@@ -1346,8 +1339,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
             h_new2->GetName(), bin_start, bin_end),
         bin_start, bin_end);
 
-    h_proj_new2->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f cm - gvz", gvz_range.first, gvz_range.second));
+    h_proj_new2->SetTitle("");
     h_proj_new2->GetXaxis()->SetTitle(TString::Format(
         "Vertex Resolution (y) [cm]"));
     h_proj_new2->GetXaxis()->SetNdivisions(5,5);
@@ -1442,8 +1434,7 @@ void VertexingQA(std::string reffile, std::string newfile, std::string outfile)
             h_new3->GetName(), bin_start, bin_end),
         bin_start, bin_end);
 
-    h_proj_new3->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f cm -gvz", gvz_range.first, gvz_range.second));
+    h_proj_new3->SetTitle("");
     h_proj_new3->GetXaxis()->SetTitle(TString::Format(
         "Vertex Resolution (z) [cm]"));
     h_proj_new3->GetXaxis()->SetNdivisions(5,5);

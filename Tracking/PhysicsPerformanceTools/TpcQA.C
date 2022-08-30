@@ -66,6 +66,8 @@ for( int region = 0; region < nregions_tpc; ++region )
     href->SetMinimum(0);
   }
 
+  href->SetTitle("");
+  hnew->SetTitle("");
   // draw
   cv->cd( region+1 );
   DrawReference(hnew, href);

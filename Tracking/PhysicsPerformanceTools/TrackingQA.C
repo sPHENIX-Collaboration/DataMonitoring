@@ -39,7 +39,8 @@ namespace
       //h_ref->Sumw2();
       h_ref->Scale(1.0 / Nevent_ref);
     }
-
+    h_new->SetTitle("");
+    h_ref->SetTitle("");
     DrawReference(h_new, h_ref);
     HorizontalLine(gPad, 1)->Draw();
   }
@@ -173,7 +174,7 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
     gPad->SetRightMargin(0.2);
     gPad->SetLogx();
     gPad->SetLogz();
-    h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_new->SetTitle("New pT Spectrum");
+    h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_new->SetTitle("");
     h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_new->Draw("colz");
     
     TLatex newl; 
@@ -215,7 +216,7 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
       gPad->SetRightMargin(0.2);
       gPad->SetLogx();
       gPad->SetLogz();
-      h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_ref->SetTitle("Reference pT Spectrum");
+      h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_ref->SetTitle("");
       h_QAG4SimulationTracking_pTRecoGenRatio_pTGen_ref->Draw("colz");
       TLatex refl; 
       refl.SetTextSize(0.05); 
@@ -294,7 +295,7 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ratio_ref = GetBinominalRatio(h_pass, h_norm);
     }
 
-    h_ratio->SetTitle(TString(hist_name_prefix) + ": Tracking Efficiency");
+    h_ratio->SetTitle("");
 
     DrawReference(h_ratio, h_ratio_ref, false);
   
@@ -341,7 +342,7 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
       h_ratio_ref = GetBinominalRatio(h_pass, h_norm);
     }
 
-    h_ratio->SetTitle(TString(hist_name_prefix) + ": Tracking Efficiency");
+    h_ratio->SetTitle("");
 
     DrawReference(h_ratio, h_ratio_ref, false);
   }
@@ -370,8 +371,7 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
     TGraphErrors *ge_QAG4SimulationTracking_pTRecoGenRatio_pTGen =
         FitProfile(h_QAG4SimulationTracking_pTRecoGenRatio_pTGen);
     ge_QAG4SimulationTracking_pTRecoGenRatio_pTGen->Draw("pe");
-    ge_QAG4SimulationTracking_pTRecoGenRatio_pTGen->SetTitle(
-        "Mean and sigma, p_{T,reco}/p_{T,truth}");
+    ge_QAG4SimulationTracking_pTRecoGenRatio_pTGen->SetTitle("");
 
     TGraphErrors *h_ratio_ref = NULL;
     if (qa_file_ref) {
@@ -472,10 +472,8 @@ void TrackingQA(std::string reffile, std::string newfile, std::string outfile)
         bin_start, bin_end);
 
     h_proj_new->GetXaxis()->SetRangeUser(.7, 1.3);
-    h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                         ": %.1f - %.1f GeV/c", pt_range.first, pt_range.second));
-    h_proj_new->GetXaxis()->SetTitle(TString::Format(
-        "Reco p_{T}/Truth p_{T}"));
+    h_proj_new->SetTitle("");
+    h_proj_new->GetXaxis()->SetTitle("");
 
     f1 = new TF1("f1", "gaus", -.85, 1.15);
     h_proj_new->Fit(f1, "mq");
@@ -589,7 +587,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
       h_ratio_ref = GetBinominalRatio(h_pass, h_norm);
     }
 
-    h_ratio->SetTitle("Tracking Purity (matched truth-reco pairs)");
+    h_ratio->SetTitle("");
 
     DrawReference(h_ratio, h_ratio_ref, false);
   }
@@ -620,7 +618,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
         FitProfile(h_QAG4SimulationTracking_pTRecoTruthMatchedRatio_pTReco);
     ge_QAG4SimulationTracking_pTRecoTruthMatchedRatio_pTReco->Draw("pe");
     ge_QAG4SimulationTracking_pTRecoTruthMatchedRatio_pTReco->SetTitle(
-        "Mean and sigma p_{Tmatched}/p_{Treco}");
+        "");
 
     TGraphErrors *h_ratio_ref = NULL;
     if (qa_file_ref)
@@ -744,7 +742,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
             bin_start);
       }
 
-      h_pass_detector_ncluster->SetTitle(TString(hist_name_prefix) + ": " + detector + Form(" n_{Cluster} | p_{T} #geq %.1fGeV/c", ncluster_spectrum_pt_cuts[i]));
+      h_pass_detector_ncluster->SetTitle("");
       h_pass_detector_ncluster->SetYTitle("# of reconstructed track");
       DrawReference(h_pass_detector_ncluster, h_pass_detector_ncluster_ref, false);
     }
@@ -782,7 +780,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
         h_ratio_ref = GetBinominalRatio(h_pass, h_norm_ref);
       }
       //
-      h_ratio->SetTitle("Tracking efficiency | " + detector + Form(" n_{Cluster} #geq %d", eff_ncluster_cuts[i]));
+      h_ratio->SetTitle("");
       DrawReference(h_ratio, h_ratio_ref, false);
     }
   }
@@ -874,8 +872,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
                 h_new->GetName()));
 
         h_proj_new->GetXaxis()->SetRangeUser(0, 1.3);
-        h_proj_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                             ": Electron lineshape"));
+        h_proj_new->SetTitle("");
         h_proj_new->GetXaxis()->SetTitle(TString::Format(
             "Reco p_{T}/Truth p_{T}"));
 
@@ -984,8 +981,7 @@ const char *hist_name_prefix = "QAG4SimulationTracking";
           // h_ref->Scale(Nevent_new / Nevent_ref);
         }
 
-        h_new->SetTitle(TString(hist_name_prefix) + TString::Format(
-                                                        ": #Upsilon #rightarrow e^{+}e^{-} lineshape"));
+        h_new->SetTitle("");
         h_new->GetXaxis()->SetRangeUser(7, 10);
 
         TF1 *f1S_ref = new TF1("f1S_ref", CBcalc2, 7, 11, 7);

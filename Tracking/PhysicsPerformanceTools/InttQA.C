@@ -68,7 +68,8 @@ TCanvas* Draw( TFile* qa_file_new, TFile* qa_file_ref, const TString& hist_name_
         href->Scale( 1./href->GetEntries() );
         href->SetMinimum(0);
       }
-
+      hnew->SetTitle("");
+      href->SetTitle("");
       // draw
       cv->cd( ilayer+1 );
       DrawReference(hnew, href);
