@@ -254,7 +254,7 @@ double DrawReference(TH1 *hnew, TH1 *href, bool draw_href_error = false, bool do
   {
     if (draw_href_error)
     {
-      href->DrawClone("E2 same");
+      href->DrawClone("E same");
       href->SetFillStyle(0);
       href->SetLineWidth(8);
       href->DrawClone("HIST same ][");
@@ -326,7 +326,6 @@ void DrawReference(TGraph *hnew, TGraph *href, bool draw_href_error = true)
     {
       href->SetLineColor(kGreen + 1);
       href->SetFillColor(kGreen + 1);
-      href->SetFillStyle(0);
       href->SetLineStyle(kSolid);
       href->SetMarkerColor(kGreen + 1);
       href->SetLineWidth(4);
@@ -349,7 +348,7 @@ void DrawReference(TGraph *hnew, TGraph *href, bool draw_href_error = true)
   {
     if (draw_href_error)
     {
-      href->DrawClone("E2");
+      href->DrawClone("E1|>");
     }
     else
       href->Draw("HIST same");

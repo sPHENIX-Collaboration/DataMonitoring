@@ -105,7 +105,8 @@ TCanvas* Draw_eff( TFile* qa_file_new, TFile* qa_file_ref, const TString& hist_n
     href1->Divide(href1, href0, 1, 1, "B");
     href1->SetMinimum(0);
       }
-
+    href1->SetTitle("");
+    hnew1->SetTitle("");
     // draw
     DrawReference(hnew1, href1);
 
