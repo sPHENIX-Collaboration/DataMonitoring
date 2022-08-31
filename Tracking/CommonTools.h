@@ -348,7 +348,7 @@ void DrawReference(TGraph *hnew, TGraph *href, bool draw_href_error = true)
   {
     if (draw_href_error)
     {
-      href->DrawClone("E1|>");
+      href->DrawClone("E1|");
     }
     else
       href->Draw("HIST same");
