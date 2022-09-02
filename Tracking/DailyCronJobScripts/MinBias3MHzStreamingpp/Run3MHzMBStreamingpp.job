@@ -3,10 +3,10 @@ Universe        = vanilla
 Notification    = Never
 Priority        = 500
 
-nEvents         = 100
+nEvents         = 40
 filename        = MinBias3MHz_pythia8_Charm_dailybuild
 outfile         = $(filename)_$(Process)_
-njobs           = 20
+njobs           = 200
 
 Executable      = Run3MHzMBStreamingpp.sh
 Output          = logfiles/$(filename)_$(Process)_.out
