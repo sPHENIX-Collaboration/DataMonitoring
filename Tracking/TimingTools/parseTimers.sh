@@ -15,25 +15,25 @@ cd $1
 echo "start of time " > time.txt
 for infile in "$2*.out"; do
      #echo $infile
-     grep -o 'PHTrackCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHSiliconSeedMerger_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHActsTrackProjection_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'MvtxHitPruner_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'MakeActsGeometry_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'MvtxClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'InttClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'TpcClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'MicromegasClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHMicromegasTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'TpcClusterCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHActsSiliconSeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHCASeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHSimpleKFProp_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHSiliconTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHActsTrkFitter_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHSimpleVertexFinder_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHActsVertexPropagator_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHTpcClusterMover_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHTpcDeltaZCorrection_TOP: per event time (ms):[^"]*' $infile >> time.txt
-     grep -o 'PHTpcResiduals_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHTrackCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHSiliconSeedMerger_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHActsTrackProjection_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'MvtxHitPruner_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'MakeActsGeometry_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'MvtxClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'InttClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'TpcClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'MicromegasClusterizer_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHMicromegasTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'TpcClusterCleaner_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHActsSiliconSeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHCASeeding_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHSimpleKFProp_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHSiliconTpcTrackMatching_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHActsTrkFitter_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHSimpleVertexFinder_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHActsVertexPropagator_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHTpcClusterMover_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHTpcDeltaZCorrection_TOP: per event time (ms):[^"]*' $infile >> time.txt
+     grep -o -h 'PHTpcResiduals_TOP: per event time (ms):[^"]*' $infile >> time.txt
 done
