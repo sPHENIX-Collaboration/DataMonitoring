@@ -17,9 +17,9 @@ root -b -q -l ~/git/DataMonitoring/Tracking/TimingTools/AnalyzeTime.C\(\"$HOME_D
 
 #Aggregate job file output
 cd $HOME_DIR
-hadd -k MinBias50kHzHijingDailyBuild_qa.root MinBias50kHzHijing_dailybuild_*_qa.root
+hadd -f -k MinBias50kHzHijingDailyBuild_qa.root MinBias50kHzHijing_dailybuild_*_qa.root
 
-hadd -k MinBias50kHzHijingDailyBuild_g4svtx.root MinBias50kHzHijing_dailybuild_*_g4svtx_eval.root
+hadd -f -k MinBias50kHzHijingDailyBuild_g4svtx.root MinBias50kHzHijing_dailybuild_*_g4svtx_eval.root
 
 
 # run qa macros and save histograms in home dir
@@ -36,7 +36,7 @@ root  -l -b -q ~/git/DataMonitoring/Tracking/PhysicsPerformanceTools/TrackingQA.
 root  -l -b -q ~/git/DataMonitoring/Tracking/PhysicsPerformanceTools/VertexingQA.C\(\"$YESTERDAY_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/VertexingComparisons.root\"\)
 
 #Compile the QA results and move to the top working directory for the day
-hadd MinBias50kHzHijingQA.root timingoutfile.root *Comparisons.root
+hadd -f -k MinBias50kHzHijingQA.root timingoutfile.root *Comparisons.root
 mv MinBias50kHzHijingQA.root ../
 mv MinBias50kHzHijingDailyBuild_g4svtx.root ../
 
