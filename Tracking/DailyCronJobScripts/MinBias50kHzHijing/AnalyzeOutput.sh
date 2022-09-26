@@ -6,7 +6,7 @@ source /cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/bin/sphenix_setup.sh
 HOME_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%Y")/$(date +"%d-%m")/MinBias50kHzHijingOutput"
 
 YESTERDAY_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%"Y)/$(date -d 'yesterday 13:00' +'%d-%m')/MinBias50kHzHijingOutput"
-
+echo "Today and yesterday directories are: "
 echo $HOME_DIR
 echo $YESTERDAY_DIR
 

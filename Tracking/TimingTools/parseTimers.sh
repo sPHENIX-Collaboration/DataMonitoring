@@ -6,11 +6,15 @@
 # at the end of your Fun4All macro, which prints the timers for all modules
 # This script produces a txt file called time.txt which  the root macro AnalyzeTime.C is setup to parse
 # The script takes two arguments:
-# $0 the directory you want the output file to be produced in (e.g. $pwd)
-# $1 the directory where the logfiles you want to grep exist
+# $1 the directory you want the output file to be produced in (e.g. $pwd)
+# $2 the directory where the logfiles you want to grep exist
 
 
 cd $1
+echo "producing output file in"
+echo $1
+echo "searching for logfiles in "
+echo $2
 
 echo "start of time " > time.txt
 for infile in "$2*.out"; do
