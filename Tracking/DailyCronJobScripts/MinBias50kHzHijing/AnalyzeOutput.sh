@@ -7,9 +7,13 @@ HOME_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%Y")/$(date +"
 
 YESTERDAY_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%"Y)/$(date -d 'yesterday 13:00' +'%d-%m')/MinBias50kHzHijingOutput"
 
+echo $HOME_DIR
+echo $YESTERDAY_DIR
+
 cd $HOME_DIR
 pwd
 # creates time.txt file with aggregated timing information
+echo "parsing timers"
 ~/git/DataMonitoring/Tracking/TimingTools/parseTimers.sh $HOME_DIR/ $HOME_DIR/
 
 #creates timingoutfile.root containing histogramed timing information
@@ -20,7 +24,6 @@ cd $HOME_DIR
 hadd -f -k MinBias50kHzHijingDailyBuild_qa.root MinBias50kHzHijing_dailybuild_*_qa.root
 
 hadd -f -k MinBias50kHzHijingDailyBuild_g4svtx.root MinBias50kHzHijing_dailybuild_*_g4svtx_eval.root
-
 
 # run qa macros and save histograms in home dir
 root -l -b -q ~/git/DataMonitoring/Tracking/PhysicsPerformanceTools/MvtxQA.C\(\"$YESTERDAY_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/MvtxComparisons.root\"\)
