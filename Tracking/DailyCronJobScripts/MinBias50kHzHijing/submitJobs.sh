@@ -24,5 +24,7 @@ cd MinBias50kHzHijing/Tracking/DailyCronJobScripts/MinBias50kHzHijing
 mkdir logfiles
 
 git clone -b QA-tracking-mbhijing https://github.com/sPHENIX-Collaboration/macros.git
-
+cd macros
+git merge origin master
+cd ..
 condor_submit Run50kHzMBHijing.job
