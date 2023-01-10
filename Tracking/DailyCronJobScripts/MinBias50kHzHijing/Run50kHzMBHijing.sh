@@ -35,7 +35,7 @@ cd macros/detectors/sPHENIX
 
 echo "pwd is: "
 pwd
-git merge origin/master
+
 root -b -q  'Fun4All_G4_sPHENIX.C('$nevents', '$runno', "'$strembed0'" ,  "'$strembed1'", "'$strembed2'", "'$strout'" )'
 
 mv $strout*.root ../../../../../../../MinBias50kHzHijingOutput/
