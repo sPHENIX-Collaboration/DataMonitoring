@@ -3,17 +3,18 @@ Universe        = vanilla
 Notification    = Never
 Priority        = 500
 
-nEvents         = 5
+nEvents         = 1
 filename        = MinBias50kHzHijing_dailybuild
 outfile         = $(filename)_$(Process)_
-njobs           = 500
-
+njobs           = 4
+low             = 100
+high            = 2000
 Executable      = Run50kHzMBHijing.sh
-Output          = logfiles/$(filename)_$(Process)_.out
-Error           = logfiles/$(filename)_$(Process)_.err
-Log             = logfiles/$(filename)_$(Process)_.log
+Output          = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).out
+Error           = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).err
+Log             = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).log
 
-Arguments       = $(Process) $(nEvents) $(outfile) 
+Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high)
 
 PeriodicHold = (NumJobStarts>=1 && JobStatus == 1)
 request_memory = 12.0GB
@@ -21,3 +22,9 @@ accounting_group = group_sphenix.mdc2
 accounting_group_user = sphnxpro
 Requirements = (CPU_Type == "mdc2")
 Queue    $(njobs)
+
+low             = 2000
+high            = 30000
+
+Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high)
+Queue $(njobs)

@@ -10,7 +10,8 @@ echo "nEvents: " $2
 runno=$1
 nevents=$2
 strout=$3
-
+low=$4
+high=$5
 echo "In directory: " 
 pwd
 
@@ -22,9 +23,9 @@ echo "Executing on date and time $(date +"%d-%m-%Y-%T")"
 
 # Construct the G4Hits DST files to access. These are MinBias 50 kHz pile up AuAu
 # events
-strembed0="DST_TRUTH_G4HIT_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000063-0"
-strembed1="DST_TRKR_G4HIT_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000063-0"
-strembed2="DST_CALO_G4HIT_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000063-0"
+strembed0="DST_TRUTH_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000040-0"
+strembed1="DST_TRKR_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000040-0"
+strembed2="DST_CALO_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000040-0"
 
 echo $strembed0
 echo $strembed1
