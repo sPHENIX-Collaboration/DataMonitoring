@@ -12,6 +12,8 @@ nevents=$2
 strout=$3
 low=$4
 high=$5
+skip=$runno*$nevents
+
 echo "In directory: " 
 pwd
 
@@ -37,7 +39,7 @@ cd macros/detectors/sPHENIX
 echo "pwd is: "
 pwd
 
-root -b -q  'Fun4All_G4_sPHENIX.C('$nevents', '$runno', "'$strembed0'" ,  "'$strembed1'", "'$strembed2'", "'$strout'" )'
+root -b -q  'Fun4All_G4_sPHENIX.C('$nevents', '$runno', "'$strembed0'" ,  "'$strembed1'", "'$strembed2'", "'$strout'","",'$skip' )'
 
 mv $strout*.root ../../../../../../../MinBias50kHzHijingOutput/
 cd ../../../
