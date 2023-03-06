@@ -12,16 +12,20 @@ nevents=$2
 strout=$3
 low=$4
 high=$5
+njobs=$6 
 
 skipevent=$((($runno+1)*$nevents))
 fileno=$(($skipevent/300))
-skip=$(($skipevent%300))
 
 if [ $high -gt 3000 ]
 then
-  fileno=$(($fileno+3))
+  # reset the process number 
+  process=$(($runno-$njobs))
+  skipevent=$((($process+1)*$nevents))
+  fileno=$((($skipevent/300)+3))
 fi
 
+skip=$(($skipevent%300))
 echo "In directory: " 
 pwd
 

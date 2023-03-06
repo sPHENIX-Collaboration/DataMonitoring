@@ -14,7 +14,7 @@ Output          = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).out
 Error           = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).err
 Log             = logfiles/$(filename)_$(Process)_ptrange$(low)_$(high).log
 
-Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high)
+Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high) $(njobs)
 
 PeriodicHold = (NumJobStarts>=1 && JobStatus == 1)
 request_memory = 12.0GB
@@ -26,5 +26,5 @@ Queue    $(njobs)
 low             = 2000
 high            = 30000
 
-Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high)
+Arguments       = $(Process) $(nEvents) $(outfile) $(low) $(high) $(njobs)
 Queue $(njobs)
