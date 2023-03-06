@@ -2,7 +2,7 @@
 
 # This script analyzes the output from the daily tracking QA jobs and aggregates it into a single root file. Intended to run after the jobs are complete as ./AnalyzeOutput.sh
 
-source /cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/bin/sphenix_setup.sh -n 
+source /opt/sphenix/core/bin/sphenix_setup.sh -n 
 HOME_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%Y")/$(date +"%d-%m")/MinBias50kHzHijingOutput"
 
 YESTERDAY_DIR="/sphenix/sim/sim01/sphnxpro/TrackingDailyBuild/$(date +"%"Y)/$(date -d 'yesterday 13:00' +'%d-%m')/MinBias50kHzHijingOutput"
