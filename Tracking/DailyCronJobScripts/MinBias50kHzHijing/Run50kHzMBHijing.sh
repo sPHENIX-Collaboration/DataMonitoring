@@ -59,4 +59,4 @@ root -b -q  'Fun4All_G4_sPHENIX.C('$nevents', '$runno', "'$strembed0'" ,  "'$str
 
 mv $strout*.root ../../../../../../../MinBias50kHzHijingOutput/
 cd ../../../
-mv logfiles/$strout.out ../../../../MinBias50kHzHijingOutput/
+mv logfiles/$strout\ptrange$low\_$high.out ../../../../MinBias50kHzHijingOutput/
