@@ -41,9 +41,9 @@ echo "Executing on date and time $(date +"%d-%m-%Y-%T")"
 
 # Construct the G4Hits DST files to access. These are MinBias 50 kHz pile up AuAu
 # events
-strembed0="DST_TRUTH_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000006-0000"$fileno".root"
-strembed1="DST_TRKR_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000006-0000"$fileno".root"
-strembed2="DST_CALO_G4HIT_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000006-0000"$fileno".root"
+strembed0="DST_TRUTH_G4HIT_single_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000007-0000"$fileno".root"
+strembed1="DST_TRKR_G4HIT_single_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000007-0000"$fileno".root"
+strembed2="DST_CALO_G4HIT_single_pi_"$low"_"$high"MeV_sHijing_0_20fm_50kHz_bkg_0_20fm-0000000007-0000"$fileno".root"
 
 echo $strembed0
 echo $strembed1
