@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #setup default new environment for job
-source /cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/bin/sphenix_setup.sh -n
+source /opt/sphenix/core/bin/sphenix_setup.sh -n
 
 
 # input parameters
@@ -22,9 +22,9 @@ echo "Executing on date and time $(date +"%d-%m-%Y-%T")"
 
 # Construct the G4Hits DST files to access. These are MinBias 50 kHz pile up AuAu
 # events
-strembed0="DST_TRUTH_G4HIT_pythia8_Charm_3MHz-0000000040-0"
-strembed1="DST_TRKR_G4HIT_pythia8_Charm_3MHz-0000000040-0"
-strembed2="DST_CALO_G4HIT_pythia8_Charm_3MHz-0000000040-0"
+strembed0="DST_TRUTH_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
+strembed1="DST_TRKR_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
+strembed2="DST_CALO_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
 
 echo $strembed0
 echo $strembed1
