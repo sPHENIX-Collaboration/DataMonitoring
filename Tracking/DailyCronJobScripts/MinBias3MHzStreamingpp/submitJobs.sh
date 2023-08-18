@@ -25,6 +25,6 @@ mkdir logfiles
 
 git clone -b QA-tracking-streamingpp https://github.com/sPHENIX-Collaboration/macros.git
 cd macros
-git merge origin/master
+git merge origin/master --no-commit
 cd ..
 condor_submit Run3MHzMBStreamingpp.job
