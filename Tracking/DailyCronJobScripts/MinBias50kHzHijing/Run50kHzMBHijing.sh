@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #setup default new environment for job
-source /opt/sphenix/core/bin/sphenix_setup.sh -n
+source /opt/sphenix/core/bin/sphenix_setup.sh -n new
 
 
 # input parameters
