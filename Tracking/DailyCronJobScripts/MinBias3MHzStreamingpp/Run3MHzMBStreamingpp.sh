@@ -22,9 +22,9 @@ echo "Executing on date and time $(date +"%d-%m-%Y-%T")"
 
 # Construct the G4Hits DST files to access. These are MinBias 50 kHz pile up AuAu
 # events
-strembed0="DST_TRUTH_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
-strembed1="DST_TRKR_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
-strembed2="DST_CALO_G4HIT_pythia8_pp_mb_3MHz-0000000007-0"
+strembed0="DST_TRUTH_G4HIT_pythia8_pp_mb_3MHz-0000000008-0"
+strembed1="DST_TRKR_G4HIT_pythia8_pp_mb_3MHz-0000000008-0"
+strembed2="DST_CALO_G4HIT_pythia8_pp_mb_3MHz-0000000008-0"
 
 echo $strembed0
 echo $strembed1
