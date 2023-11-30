@@ -21,6 +21,7 @@ hadd -k MinBias3MHzStreamingppDailyBuild_qa.root MinBias3MHz_pythia8_Charm_daily
 
 hadd -k MinBias3MHzStreamingppDailyBuild_g4svtx.root MinBias3MHz_pythia8_Charm_dailybuild_*_g4svtx_eval.root
 
+rm MinBias3MHz_pythia8_Charm_dailybuild_*_g4svtx_eval.root
 
 # run qa macros and save histograms in home dir
 root -l -b -q ~/git/DataMonitoring/Tracking/PhysicsPerformanceTools/MvtxQA.C\(\"$YESTERDAY_DIR/MinBias3MHzStreamingppDailyBuild_qa.root\",\"$HOME_DIR/MinBias3MHzStreamingppDailyBuild_qa.root\",\"$HOME_DIR/MvtxComparisons.root\"\)

@@ -25,6 +25,8 @@ hadd -f -k MinBias50kHzHijingDailyBuild_qa.root MinBias50kHzHijing_dailybuild_*_
 
 hadd -f -k MinBias50kHzHijingDailyBuild_g4svtx.root MinBias50kHzHijing_dailybuild_*_g4svtx_eval.root
 
+rm MinBias50kHzHijing_dailybuild_*_g4svtx_eval.root
+
 # run qa macros and save histograms in home dir
 root -l -b -q ~/git/DataMonitoring/Tracking/PhysicsPerformanceTools/MvtxQA.C\(\"$YESTERDAY_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/MinBias50kHzHijingDailyBuild_qa.root\",\"$HOME_DIR/MvtxComparisons.root\"\)
 
